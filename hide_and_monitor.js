@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         GMGN Tools
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/Xuthics/GMGN-Tools
 // @version      0.2
+// @license MIT
 // @description  Monitor new div elements on the gmgn.ai/meme page and log unseen data-row-keys
 // @author       Xuthics
 // @match        https://gmgn.ai/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gmgn.ai
 // @grant        none
 // ==/UserScript==
-
 (function() {
     'use strict';
 
