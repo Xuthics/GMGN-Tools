@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name         GMGN Tools
-// @namespace    https://github.com/Xuthics/GMGN-Tools
-// @version      0.1
-// @license MIT
+// @namespace    http://tampermonkey.net/
+// @version      0.2
 // @description  Monitor new div elements on the gmgn.ai/meme page and log unseen data-row-keys
 // @author       Xuthics
 // @match        https://gmgn.ai/*
@@ -46,6 +45,13 @@
 
     // Function to fetch token data and analyze it
     async function check_token(token, element) {
+        // Check if the token contains an underscore
+        const underscoreIndex = token.indexOf('_');
+
+        // If an underscore is present, use the part after it
+        if (underscoreIndex !== -1) {
+            token = token.substring(underscoreIndex + 1);
+        }
         const url = `https://gmgn.ai/defi/quotation/v1/tokens/top_holders/sol/${token}?limit=50&cost=20&orderby=amount_percentage&direction=desc`;
         const response = await fetch(url);
 
